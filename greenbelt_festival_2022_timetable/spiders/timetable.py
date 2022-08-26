@@ -45,20 +45,12 @@ class LineupSpider(scrapy.Spider):
                 minutes=int(event_time.group("mins"))
             )
 
-            # yield {
-            #     "artist_name": artist_data["artist_name"],
-            #     "event_location": event.xpath("h3/br[1]/preceding-sibling::text()[1]").get(),
-            #     "event_title": event.xpath("string(h4)").get(),
-            #     "event_day": event_datetime.strftime("%A"),
-            #     "event_start_time": event_datetime.strftime("%H:%M"),
-            #     "event_summary": event.xpath("string(p)").get(),
-            #     "source_url": response.url
-            # }
-
             yield {
-                "act": event.xpath("string(h4)").get(),
-                "start": event_datetime,
-                "stage": event.xpath("h3/br[1]/preceding-sibling::text()[1]").get()
+                "artist_name": artist_data["artist_name"],
+                "event_location": event.xpath("h3/br[1]/preceding-sibling::text()[1]").get(),
+                "event_title": event.xpath("string(h4)").get(),
+                "event_day": event_datetime.strftime("%A"),
+                "event_start_time": event_datetime.strftime("%H:%M"),
+                "event_summary": event.xpath("string(p)").get(),
+                "source_url": response.url
             }
-
-            #"start":"2016-06-24 18:15","end":"2016-06-24 19:15","stage":"Pyramid","act":"Jess Glynne"
