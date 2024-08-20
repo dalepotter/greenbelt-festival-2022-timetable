@@ -11,7 +11,7 @@ NOTE: The official paid app will likely offer data in a more usable format, but 
 ## In a hurry
 
 The 2022 timetable (correct at Friday 26 August 9am) is available:
-- In [CSV (spreadsheet) format](https://github.com/dalepotter/greenbelt-festival-2022-timetable/raw/master/timetable.csv)
+- In [CSV (spreadsheet) format](https://github.com/dalepotter/greenbelt-festival-2022-timetable/raw/main/timetable.csv)
 - As a [public Google sheet](https://docs.google.com/spreadsheets/d/1jUHMsrpruco1IJIwpW68lJyLOvZu-2v2oWlW5cddoUs/edit?usp=sharing)
 
 ## Generate your own (up-to-date) timetable
