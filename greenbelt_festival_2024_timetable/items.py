@@ -6,7 +6,7 @@
 import scrapy
 
 
-class Greenbelt2022TimetableItem(scrapy.Item):
+class Greenbelt2024TimetableItem(scrapy.Item):
     # define the fields for your item here like:
     # name = scrapy.Field()
     pass

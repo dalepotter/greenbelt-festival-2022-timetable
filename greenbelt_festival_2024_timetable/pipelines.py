@@ -8,6 +8,6 @@
 from itemadapter import ItemAdapter
 
 
-class Greenbelt2022TimetablePipeline:
+class Greenbelt2024TimetablePipeline:
     def process_item(self, item, spider):
         return item

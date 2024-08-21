@@ -4,12 +4,12 @@ from datetime import datetime, timedelta
 
 
 class LineupSpider(scrapy.Spider):
-    """Crawls the Greenbelt Festival 2022 lineup to extract artist appearance data."""
-    name = "greenbelt_festival_2022_lineup"
-    start_urls = ["https://www.greenbelt.org.uk/2022-lineup/"]
+    """Crawls the Greenbelt Festival 2024 lineup to extract artist appearance data."""
+    name = "greenbelt_festival_2024_lineup"
+    start_urls = ["https://www.greenbelt.org.uk/2024-lineup/"]
 
     def parse(self, response):
-        self.logger.info("Starting Greenbelt 2022 timetable spider")
+        self.logger.info("Starting Greenbelt 2024 timetable spider")
         all_artists = response.css("ul.listing").css("li")
         for artist in all_artists:
             artist_data = {
@@ -31,13 +31,11 @@ class LineupSpider(scrapy.Spider):
             # Extract date and time
             event_day_time_elem = event.xpath("h3/br[1]/following-sibling::text()[1]")
             if "Friday" in event_day_time_elem.get():
-                base_date = datetime(2022, 8, 26)
+                base_date = datetime(2024, 8, 23)
             elif "Saturday" in event_day_time_elem.get():
-                base_date = datetime(2022, 8, 27)
+                base_date = datetime(2024, 8, 24)
             elif "Sunday" in event_day_time_elem.get():
-                base_date = datetime(2022, 8, 28)
-            elif "Monday" in event_day_time_elem.get():
-                base_date = datetime(2022, 8, 29)
+                base_date = datetime(2024, 8, 25)
             event_day_time_elem.re("\d\d:\d\d")[0]
             event_time = re.search(r"(?P<hours>\d\d):(?P<mins>\d\d)", event_day_time_elem.get())
             event_datetime = base_date + timedelta(
